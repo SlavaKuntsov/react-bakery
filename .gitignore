@@ -12,7 +12,7 @@ dist
 dist-ssr
 *.local
 
-landind assets
+landing_assets
 
 # Editor directories and files
 .vscode/*
