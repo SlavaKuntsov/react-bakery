@@ -18,5 +18,6 @@ module.exports = {
     ],
 	'no-unused-vars': 'warn',
 	"no-mixed-spaces-and-tabs": 'warn',
+	"react/prop-types": "off" // need on
   },
 }
