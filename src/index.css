@@ -7,6 +7,15 @@ html, body, #root{
 	height: 100%;
 	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
+
+.ant-drawer-header-title{
+	justify-content: end;
+}
+.ant-drawer-close {
+	margin-inline-end: 0 !important;
+	font-size: 24px;
+}
+
 /* :root {
   line-height: 1.5;
   font-weight: 400;

@@ -18,7 +18,7 @@ export default function Nav() {
 
 	return (
 		<nav className='flex flex-row justify-between items-center w-full md:px-40 py-6 bg-white'>
-			<h2 className='text-3xl xl:text-4xl font-semibold inline md:block text-center w-full md:w-auto'>
+			<h2 className='text-2xl xl:text-4xl font-semibold inline md:block text-center w-full md:w-auto'>
 				Белорусский вкус
 			</h2>
 
