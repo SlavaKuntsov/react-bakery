@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom'
 
 
 export default function Links ({ isMenu }) {
-	console.log('isMenu: ', isMenu);
-	
 	return (
 		<>
 			<LinkStyle isMenu={isMenu} to='/'>Главная</LinkStyle>
@@ -20,7 +18,7 @@ function LinkStyle({ children, isMenu, to }) {
 		<li
 			className={
 				classNames(
-						{'text-3xl': isMenu},
+						{'text-2xl': isMenu},
 						{'': !isMenu}
 				)
 			}

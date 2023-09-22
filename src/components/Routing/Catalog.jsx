@@ -1,12 +1,14 @@
 import Nav from "../Nav/Nav";
+import Cart from "../Cart/Cart";
 
-export default function Home () {
+export default function Catalog () {
 	
 	return (
 		<div className='flex flex-col justify-center items-center'>
-			{/* <h1 className="text-5xl font-semibold text-center">Home</h1> */}
 			<Nav/>
+			<Cart/>
+			каталог
 		</div>
-	);
+	)
 }
 

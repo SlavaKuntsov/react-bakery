@@ -1,8 +1,8 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
-import Home from './components/Pages/Home'
-import Catalog from './components/Pages/Catalog'
-import About from './components/Pages/About'
+import Home from './components/Routing/Home'
+import Catalog from './components/Routing/Catalog'
+import About from './components/Routing/About'
 
 import Layout from './components/Layout/Layout'
 
