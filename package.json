@@ -4,14 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "concurrently \"vite\" \"json-server --watch db.json --port 9000\"",
-    "dev": "vite",
-    "db": "json-server --watch db.json --port 9000",
-    "build without db": "vite build",
-    "build": "concurrently \"vite build\" \"json-server --watch db.json --port 9000\"",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-	"deploy": "vercel --prod"
+	"dev": "concurrently \"vite\" \"npm run start:api\"",
+	"build": "vite build",
+	"start:api": "json-server api/db.json --port $PORT",
+	"vercel-build": "npm run build && npm run build:api",
+	"build:api": "cp api/db.json dist/"
   },
   "dependencies": {
     "@ant-design/icons": "^5.2.6",

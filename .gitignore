@@ -24,3 +24,5 @@ landing_assets
 *.njsproj
 *.sln
 *.sw?
+
+.vercel
