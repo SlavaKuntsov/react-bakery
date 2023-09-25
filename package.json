@@ -4,13 +4,14 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "",
+    "start": "concurrently \"vite\" \"json-server --watch db.json --port 9000\"",
     "dev": "vite",
     "db": "json-server --watch db.json --port 9000",
     "build without db": "vite build",
     "build": "concurrently \"vite build\" \"json-server --watch db.json --port 9000\"",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+	"deploy": "vercel --prod"
   },
   "dependencies": {
     "@ant-design/icons": "^5.2.6",
@@ -29,7 +30,8 @@
     "react-router-dom": "^6.15.0",
     "redux": "^4.2.1",
     "redux-persist": "^6.0.0",
-    "redux-thunk": "^2.4.2"
+    "redux-thunk": "^2.4.2",
+    "vercel": "^32.3.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
