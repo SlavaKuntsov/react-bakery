@@ -5,8 +5,9 @@ const actions = {
 		type: 'FETCH_DATA_REQUEST',
 		payload: id
 	}),
-	fetchDataSuccess: () => ({
+	fetchDataSuccess: data => ({
 		type: 'FETCH_DATA_SUCCESS',
+		payload: data
 	}),
 	fetchDataError: () => ({
 		type: 'FETCH_DATA_ERROR',
@@ -15,10 +16,12 @@ const actions = {
 		productApi
 			.getAll()
 			.then(({data}) => {
-				dispatch(actions.setMessages(data))
+				console.log('data: ', data);
+				dispatch(actions.fetchDataSuccess(data))
 			})
 			.catch(() => {
-				dispatch(actions.setIsLoading(false))
+				console.log('error')
+				dispatch(actions.fetchDataError())
 			})
 	}
 }

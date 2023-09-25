@@ -14,7 +14,7 @@ export default function Nav() {
 	
 	const dispatch = useDispatch()
 	
-	const products = useSelector(state => state.products)
+	const products = useSelector(state => state.cart.products)
 
 	const [openDrawer, setOpenDrawer] = useState(false)
 	const showDrawer = () => {
@@ -34,8 +34,8 @@ export default function Nav() {
 
 	return (
 		<nav className='bg-white w-full flex justify-center items-center z-20'>
-			<div className="max-w-[1600px] flex flex-row justify-between items-center w-full md:px-20 py-6 relative">
-				<h2 className='text-2xl xl:text-4xl font-semibold inline md:block text-center w-full md:w-auto'>
+			<div className="max-w-[1600px] flex flex-row justify-between items-center w-full md:px-20 py-4 relative">
+				<h2 className='text-2xl xl:text-4xl font-medium inline md:block text-center w-full md:w-auto text-brown'>
 					Белорусский вкус
 				</h2>
 

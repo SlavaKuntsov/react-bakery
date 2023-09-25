@@ -3,7 +3,7 @@ const initialState = {
 	isCartOpen: false,
 }
 
-export const rootReducer = (state = initialState, { type, payload }) => {
+export const cartReducer = (state = initialState, { type, payload }) => {
 	switch (type) {
 		case 'ADD_TO_CART': 
 			return {

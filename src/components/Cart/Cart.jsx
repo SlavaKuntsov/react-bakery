@@ -9,9 +9,10 @@ import CartAction from '../../store/actions/cart.action'
 import classNames from 'classnames'
 
 export default function Cart() {
-	const isCartOpen = useSelector(state => state.isCartOpen)
+	const isCartOpen = useSelector(state => state.cart.isCartOpen)
 	console.log('isCartOpen: ', isCartOpen);
-	const products = useSelector(state => state.products)
+	const products = useSelector(state => state.cart.products)
+	console.log('products: ', products);
 
 	const dispatch = useDispatch()
 
