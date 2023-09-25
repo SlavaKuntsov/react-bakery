@@ -8,7 +8,7 @@
     "build": "vite build",
 	"vercel-build": "npm run build && npm run build:api",
     "start:api": "json-server api/db.json --port 9000",
-	"build:api": "cp api/db.json dist/",
+	"build:api": "node api/index.js",
     "vercel": "vercel --prod",
     "preview": "vite preview"
   },
