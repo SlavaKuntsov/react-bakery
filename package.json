@@ -6,9 +6,10 @@
   "scripts": {
 	"dev": "concurrently \"vite\" \"npm run start:api\"",
 	"build": "vite build",
-	"start:api": "json-server api/db.json --port $PORT",
+	"start:api": "json-server api/db.json --port 9000",
 	"vercel-build": "npm run build && npm run build:api",
-	"build:api": "cp api/db.json dist/"
+	"build:api": "cp api/db.json dist/",
+	"vercel": "vercel --prod"
   },
   "dependencies": {
     "@ant-design/icons": "^5.2.6",
