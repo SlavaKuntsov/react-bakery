@@ -5,8 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "concurrently \"vite\" \"npm run start:api\"",
-    "build": "concurrently \"vite build\" \"npm run start:api\"",
+    "build": "vite build",
+	"vercel-build": "npm run build && npm run build:api",
     "start:api": "json-server api/db.json --port 9000",
+	"build:api": "cp api/db.json dist/",
     "vercel": "vercel --prod",
     "preview": "vite preview"
   },
