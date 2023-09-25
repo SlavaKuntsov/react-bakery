@@ -2,17 +2,36 @@
 	"functions": {
 		"api/index.js": {
 			"runtime": "vercel-node@1",
-			"maxDuration": 10
+			"memory": 128
 		}
 	},
 	"rewrites": [
 		{
-			"source": "/api/:any*",
+			"source": "/api/:path*",
 			"destination": "/api/index.js"
 		},
 		{
-			"source": "/:any*",
+			"source": "/(.*)",
 			"destination": "/index.html"
+		}
+	],
+	"builds": [
+		{
+			"src": "api/**",
+			"use": "@vercel/node"
+		},
+		{
+			"src": "public/**",
+			"use": "@vercel/static"
+		},
+		{
+			"src": "src/**",
+			"use": "@vercel/static",
+			"config": {
+				"rewrites": [
+					{ "source": "/(.*)", "destination": "/index.html" }
+				]
+			}
 		}
 	]
 }
