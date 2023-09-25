@@ -1,0 +1,18 @@
+{
+	"functions": {
+		"api/index.js": {
+			"runtime": "vercel-node@1",
+			"maxDuration": 10
+		}
+	},
+	"rewrites": [
+		{
+			"source": "/api/:any*",
+			"destination": "/api/index.js"
+		},
+		{
+			"source": "/:any*",
+			"destination": "/index.html"
+		}
+	]
+}
