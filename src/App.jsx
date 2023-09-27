@@ -1,4 +1,8 @@
+import { useEffect } from 'react'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+
+import productAction from '../src/store/actions/products.action'
 
 import Home from './components/Routing/Home'
 import Catalog from './components/Routing/Catalog'
@@ -21,6 +25,13 @@ export default function App() {
 			element: <About/>
 		}
 	])
+
+
+	const dispatch = useDispatch()
+
+	useEffect(() => {
+		dispatch(productAction.fetchData())
+	}, [])
 
 	return (
 		<Layout>
