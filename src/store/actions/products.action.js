@@ -12,8 +12,8 @@ const actions = {
 	fetchDataError: () => ({
 		type: 'FETCH_DATA_ERROR',
 	}),
-	fetchData: () => dispatch => {
-		productApi
+	fetchData:  () => async dispatch => {
+		await productApi
 			.getAll()
 			.then(({data}) => {
 				console.log('data: ', data);
