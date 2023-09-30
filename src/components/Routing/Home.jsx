@@ -11,21 +11,13 @@ export default function Home () {
 
 	const dispatch = useDispatch()
 
-	useEffect(() => {
-		dispatch(productAction.fetchData())
-	}, [])
+
 
 	return (
 		<div className='w-full h-full flex flex-col items-center '>
 			<Nav/>
 			<Cart/>
 			<Main/>
-			<div
-				onClick={() => {
-					dispatch(productAction.fetchData())
-				}}
-			>get all</div>
-
 
 			
 			

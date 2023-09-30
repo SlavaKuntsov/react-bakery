@@ -1,0 +1,21 @@
+.ant-drawer-header-title{
+	justify-content: end;
+	flex-direction: row-reverse;
+}
+
+.ant-drawer-close {
+	margin-inline-end: 0 !important;
+	font-size: 24px;
+}
+.ant-drawer-content-wrapper{
+	position: absolute !important;
+	right: 0 !important;
+}
+
+@media (width <= 650px) {
+	.ant-drawer-header-title {
+		h2{
+			font-size: 20px;
+		}
+	}
+}
