@@ -1,11 +1,9 @@
-import {useEffect} from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import productAction from '../../store/actions/products.action'
+import { useDispatch } from 'react-redux'
+import { Suspense, lazy } from "react"
 
-import Nav from "../Nav/Nav";
-import Cart from "../Cart/Cart";
 import Main from "../Main/Main";
 
+const Cart = lazy(() => import('../Cart/Cart'))
 
 export default function Home () {
 
@@ -14,9 +12,13 @@ export default function Home () {
 
 
 	return (
-		<div className='w-full h-full flex flex-col items-center '>
-			<Nav/>
-			<Cart/>
+		<div className='w-full h-full flex flex-col items-center'>
+			<Suspense fallback={<>...</>}>
+				<Cart/>
+			</Suspense>
+			{/* <Suspense fallback={<>...</>}>
+				<Main/>
+			</Suspense> */}
 			<Main/>
 
 			
