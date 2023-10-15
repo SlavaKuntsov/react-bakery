@@ -9,7 +9,7 @@ import { cake, cakeMobileBlur, m1, m2, m3 } from 'utils/assetsImports'
 
 
 export default function StartBlock() {
-	const allCakes = [m1, m2, m1, m2, m3, m3, m1, m2]
+	const allCakes = [m1, m2, m1, m2, m3, m3, m1, m2, m3]
 	return (
 		<div className='relative sm:pb-10 md:p-0 min-h-[1000px] sm:min-h-0'>
 			<div
