@@ -19,7 +19,13 @@ export default defineConfig({
 	],
 	resolve: {
 		alias: {
-			react: 'react' // Проверьте, что это указывает на правильный путь к модулю React
+			react: 'react', // Проверьте, что это указывает на правильный путь к модулю React
+			src: '/src',
+			assets: '/src/assets',
+			components: '/src/components',
+			pages: '/src/pages',
+			store: '/src/store',
+			utils: '/src/utils',
 		}
 	},
 	build: {
