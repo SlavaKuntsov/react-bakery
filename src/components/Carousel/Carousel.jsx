@@ -1,20 +1,54 @@
-import { useState, useEffect } from "react"
+import { useEffect, useState } from "react";
+import styled from 'styled-components';
 
-import { LiaLongArrowAltRightSolid as ArrowR } from 'react-icons/lia';
-import { LiaLongArrowAltLeftSolid as ArrowL } from 'react-icons/lia';
+import { LiaLongArrowAltLeftSolid as ArrowL, LiaLongArrowAltRightSolid as ArrowR } from 'react-icons/lia';
 
 
 export default function Carousel ({ imageArray, className }) {
 
 	const [translateX, setTranslateX] = useState(0)
-	console.log('translateX: ', translateX);
-
+	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
 
 	const IMAGE_ARRAY = imageArray
 
 	const MAX_IMAGE_ON_ONE_SLIDE = 3; //!
-	const IMG_WIDTH = 200;
+	const imgWidth = 200;
+	const [IMG_WIDTH, set_IMG_WIDTH] = useState(imgWidth)
+	console.log('IMG_WIDTH: ', IMG_WIDTH);
+
+	useEffect(() => {
+		const handleResize = () => {
+			setWindowWidth(window.innerWidth);
+		};
+	
+		window.addEventListener('resize', handleResize);
+	
+		return () => {
+			window.removeEventListener('resize', handleResize);
+		};
+	}, []);
+
+	useEffect(() => {
+		switch (true) {
+			case windowWidth >= 1280:
+				set_IMG_WIDTH(imgWidth)
+				break;
+			case windowWidth >= 1024 && windowWidth < 1280:
+				set_IMG_WIDTH(imgWidth / 100 * 80)
+				break;
+			case windowWidth >= 640 && windowWidth < 1024:
+				set_IMG_WIDTH(imgWidth / 100 * 60)
+				break;
+			case windowWidth < 640:
+				set_IMG_WIDTH(imgWidth / 100 * 40)
+				break;
+		
+			default:
+				break;
+		}
+	}, [windowWidth]);
+	console.log('windowWidth: ', windowWidth);
 
 	// change depending on the quantity MAX_IMG_ON_ONE_SLIDE 
 	const COUNT_OF_MOVED_IMAGES = 3; //! 
@@ -59,8 +93,8 @@ export default function Carousel ({ imageArray, className }) {
 	// }, [])
 	
 	return (
-		<div className={`flex w-fit flex-row py-8 px-16 gap-10 items-center ${className}`}>
-			<div className='absolute top-0 left-0 w-full h-full bg-white opacity-60 z-10 rounded-[90px]'></div>
+		<div className={`carousel hidden sm:flex w-fit flex-row py-6 px-10 lg:px-12 gap-10 items-center ${className}`}>
+			<div className='absolute top-0 left-0 w-full h-full bg-white opacity-70 z-10 rounded-[90px]'></div>
 
 			<div className='flex flex-row gap-2 z-20 items-center justify-center'>
 				<div
@@ -72,7 +106,7 @@ export default function Carousel ({ imageArray, className }) {
 							)
 							: null
 					}}
-				><ArrowL size={30}/></div>
+				><ArrowL size={'2rem'}/></div>
 				<div className='min-w-[30px] text-center flex flex-row items-start select-none'>
 					<span className='text-2xl font-semibold'>{countOfViewedImages}</span>
 					<span className='text-2xl'>/</span>
@@ -88,7 +122,7 @@ export default function Carousel ({ imageArray, className }) {
 							)
 							: null
 					}}
-				><ArrowR size={30}/></div>
+				><ArrowR size={'2rem'}/></div>
 			</div>
 
 			<div 
@@ -96,15 +130,22 @@ export default function Carousel ({ imageArray, className }) {
 				style={{ width: `${ONE_SLIDE_WIDTH}px`}}
 			>
 				<div 
-					className={`flex flex-row w-[${ONE_SLIDE_WIDTH}px] items-center justify-start transition-transform duration-300`}
+					className={`flex flex-row items-center justify-start transition-transform duration-300`}
 					style={{ transform: `translateX(-${translateX}px)`, gap: `${GAP_BETWEEN_IMAGES}px`}}
 				>
 					{IMAGE_ARRAY.map((item, id) => {
 						return <div 
-							className={`bg-cover bg-no-repeat bg-center rounded-2xl`} 
+							className={`bg-cover bg-no-repeat bg-center rounded-2xl `} 
 							style={{ backgroundImage: `url("${item}")`, minWidth: `${RESULT_IMAGE_WIDTH}px`, height: `${IMG_WIDTH / 1.8}px`}} 
 							key={id}
 						></div>
+						// return <Image 
+						// 	key={id}
+						// 	$image={item}
+						// 	$RESULT_IMAGE_WIDTH={RESULT_IMAGE_WIDTH}
+						// 	$IMG_WIDTH={IMG_WIDTH}
+						// 	className={`bg-cover bg-no-repeat bg-center rounded-2xl `}
+						// ></Image>
 					})}
 				</div>
 				
@@ -113,3 +154,13 @@ export default function Carousel ({ imageArray, className }) {
 	)
 }
 
+// const Image = styled.div`
+// 	background-image: ${props => `url("${props.$image}")`};
+// 	min-width: ${props => `${props.$RESULT_IMAGE_WIDTH}px`};
+// 	height: ${props => `${props.$IMG_WIDTH / 1.8}px`};
+
+// 	@media (max-width: 1280px) {
+// 		min-width: ${props => `${props.$RESULT_IMAGE_WIDTH / 100 * 80}px`};
+// 		height: ${props => `${(props.$IMG_WIDTH / 1.8) / 100 * 80}px`};
+// 	}    
+// `
