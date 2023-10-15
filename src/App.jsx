@@ -33,11 +33,11 @@ export default function App() {
 					element: <Home />
 				},
 				{
-					path: 'home/catalog',
+					path: 'catalog',
 					element: <Catalog />
 				},
 				{
-					path: 'home/about',
+					path: 'about',
 					element: <About />
 				}
 			]
