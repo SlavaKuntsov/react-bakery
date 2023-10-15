@@ -5,8 +5,8 @@ export default function Links ({ isMenu }) {
 	return (
 		<>
 			<LinkStyle isMenu={isMenu} to='/home'>Главная</LinkStyle>
-			<LinkStyle isMenu={isMenu} to='/home/catalog'>Каталог</LinkStyle>
-			<LinkStyle isMenu={isMenu} to='/home/about'>О нас</LinkStyle>
+			<LinkStyle isMenu={isMenu} to='/catalog'>Каталог</LinkStyle>
+			<LinkStyle isMenu={isMenu} to='/about'>О нас</LinkStyle>
 		</>
 			
 	)
