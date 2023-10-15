@@ -1,7 +1,7 @@
 import { Suspense, lazy, useEffect } from 'react'
 
 import PropTypes from 'prop-types'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useNavigate } from 'react-router-dom'
 
 import 'src/App.scss'
 
@@ -11,6 +11,12 @@ const Cart = lazy(() => import('components/Cart/Cart'))
 
 
 export default function Layout() {
+
+	const navigate = useNavigate();
+
+	useEffect(() => {
+		navigate('/home', { replace: true });
+	}, [navigate ])
 
 	return (
 		<div className='layout bg-white w-full h-full overflow-x-hidden overflow-y-auto'>

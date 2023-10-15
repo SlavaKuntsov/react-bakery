@@ -20,6 +20,8 @@ export default function App() {
 	// 	return <div>Dang!</div>;
 	//   }
 
+
+
 	const router = createBrowserRouter([
 		{
 			path: '/',
@@ -27,6 +29,7 @@ export default function App() {
 			children: [
 				{
 					path: 'home',
+					index: true,
 					element: <Home />
 				},
 				{
