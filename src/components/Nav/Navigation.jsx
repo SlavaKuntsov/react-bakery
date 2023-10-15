@@ -1,18 +1,18 @@
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import classNames from 'classnames';
 
-export default function Links ({ isMenu }) {
+export default function Links ({ isMenu, isCLoseDrawer }) {
 	return (
 		<>
-			<LinkStyle isMenu={isMenu} to='/home'>Главная</LinkStyle>
-			<LinkStyle isMenu={isMenu} to='/catalog'>Каталог</LinkStyle>
-			<LinkStyle isMenu={isMenu} to='/about'>О нас</LinkStyle>
+			<LinkStyle isMenu={isMenu} to='/home' isCLose={isCLoseDrawer}>Главная</LinkStyle>
+			<LinkStyle isMenu={isMenu} to='/catalog' isCLose={isCLoseDrawer}>Каталог</LinkStyle>
+			<LinkStyle isMenu={isMenu} to='/about' isCLose={isCLoseDrawer}>О нас</LinkStyle>
 		</>
 			
 	)
 }
 
-function LinkStyle({ children, isMenu, to }) {
+function LinkStyle({ children, isMenu, to, isCLose }) {
 
 	const location = useLocation();
 
@@ -20,6 +20,7 @@ function LinkStyle({ children, isMenu, to }) {
 		<li>
 			<NavLink 
 				to={to}
+				onClick={isCLose}
 				className={
 					classNames(
 						'text-brown w-full block',

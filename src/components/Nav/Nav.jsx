@@ -61,7 +61,7 @@ export default function Nav() {
 					open={openDrawer}
 				>
 					<ul className='flex flex-col gap-2'>
-						<Navigation isMenu={true}/>
+						<Navigation isMenu={true} isCLoseDrawer={closeDrawer}/>
 					</ul>
 				</Drawer>
 			</div>
