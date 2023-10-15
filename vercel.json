@@ -1,28 +1,8 @@
 {
 	"rewrites": [
 		{
-			"source": "/(.*)",
-			"destination": "/home/index.html"
-		}
-	],
-	"headers": [
-		{
-			"source": "/(.*)",
-			"headers": [
-				{
-					"key": "Content-Type",
-					"value": "text/html"
-				}
-			]
-		},
-		{
-			"source": "/assets/js/main.js",
-			"headers": [
-				{
-					"key": "Content-Type",
-					"value": "application/javascript"
-				}
-			]
+			"source": "/home/(.*)",
+			"destination": "/home/$1"
 		}
 	]
 }
