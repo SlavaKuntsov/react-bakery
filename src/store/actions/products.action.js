@@ -16,7 +16,6 @@ const actions = {
 		await productApi
 			.getAll()
 			.then(({data}) => {
-				console.log('data: ', data);
 				dispatch(actions.fetchDataSuccess(data))
 			})
 			.catch(() => {
