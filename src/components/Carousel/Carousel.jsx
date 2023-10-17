@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import styled from 'styled-components';
+import { useMediaQuery } from 'react-responsive'
 
 import { LiaLongArrowAltLeftSolid as ArrowL, LiaLongArrowAltRightSolid as ArrowR } from 'react-icons/lia';
 
@@ -7,8 +7,6 @@ import { LiaLongArrowAltLeftSolid as ArrowL, LiaLongArrowAltRightSolid as ArrowR
 export default function Carousel ({ imageArray, className }) {
 
 	const [translateX, setTranslateX] = useState(0)
-	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
 
 	const IMAGE_ARRAY = imageArray
 
@@ -17,38 +15,43 @@ export default function Carousel ({ imageArray, className }) {
 	const [IMG_WIDTH, set_IMG_WIDTH] = useState(imgWidth)
 	console.log('IMG_WIDTH: ', IMG_WIDTH);
 
-	useEffect(() => {
-		const handleResize = () => {
-			setWindowWidth(window.innerWidth);
-		};
-	
-		window.addEventListener('resize', handleResize);
-	
-		return () => {
-			window.removeEventListener('resize', handleResize);
-		};
-	}, []);
+	const size1280px = useMediaQuery({ query: '(min-width: 1280px)' })
+	const size1024px = useMediaQuery({ query: '(min-width: 1024px)' })
+	const size640pxMin = useMediaQuery({ query: '(min-width: 640px)' })
+	const size640pxMax = useMediaQuery({ query: '(max-width: 640px)' })
 
+	// useEffect(() => {
+	// 	const handleResize = () => {
+	// 		setWindowWidth(window.innerWidth);
+	// 	};
+	
+	// 	window.addEventListener('resize', handleResize);
+	
+	// 	return () => {
+	// 		window.removeEventListener('resize', handleResize);
+	// 	};
+	// }, []);
+
+	// responsive resize
 	useEffect(() => {
 		switch (true) {
-			case windowWidth >= 1280:
+			case size1280px:
 				set_IMG_WIDTH(imgWidth)
 				break;
-			case windowWidth >= 1024 && windowWidth < 1280:
+			case size1024px:
 				set_IMG_WIDTH(imgWidth / 100 * 80)
 				break;
-			case windowWidth >= 640 && windowWidth < 1024:
+			case size640pxMin:
 				set_IMG_WIDTH(imgWidth / 100 * 60)
 				break;
-			case windowWidth < 640:
+			case size640pxMax:
 				set_IMG_WIDTH(imgWidth / 100 * 40)
 				break;
 		
 			default:
 				break;
 		}
-	}, [windowWidth]);
-	console.log('windowWidth: ', windowWidth);
+	}, [size1024px, size1280px, size640pxMax, size640pxMin]);
 
 	// change depending on the quantity MAX_IMG_ON_ONE_SLIDE 
 	const COUNT_OF_MOVED_IMAGES = 3; //! 
