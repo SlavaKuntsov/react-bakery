@@ -16,15 +16,15 @@ export default function Layout() {
 	const location = useLocation();
 
 	useEffect(() => {
-		if(location.pathname === '/') {
-			navigate('/home', { replace: true });
-		}
-		else if(location.hash === '/catalog') {
-			navigate('/catalog', { replace: true });
-		}
-		else if(location.hash === '/about') {
-			navigate('/about', { replace: true });
-		}
+		// if(location.pathname === '/') {
+		// 	// navigate('/home', { replace: true });
+		// }
+		// else if(location.hash === '/catalog') {
+		// 	navigate('/catalog', { replace: true });
+		// }
+		// else if(location.hash === '/about') {
+		// 	navigate('/about', { replace: true });
+		// }
 	}, [navigate, location]);
 
 	return (

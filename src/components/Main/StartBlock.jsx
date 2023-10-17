@@ -50,7 +50,7 @@ export default function StartBlock() {
 					</div>
 
 					<div className='w-full flex flex-row justify-between sm:mt-10 md:m-0'>
-						<Button isDark={true} to={'/home'}>
+						<Button isDark={true} to={'/'}>
 							Заказать
 						</Button>
 					</div>

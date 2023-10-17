@@ -26,18 +26,19 @@ export default function App() {
 		{
 			path: '/',
 			element: <Layout />,
+			errorElement: <></>,
 			children: [
 				{
-					path: 'home',
+					path: '/',
 					index: true,
 					element: <Home />
 				},
 				{
-					path: 'catalog',
+					path: '/catalog',
 					element: <Catalog />
 				},
 				{
-					path: 'about',
+					path: '/about',
 					element: <About />
 				}
 			]

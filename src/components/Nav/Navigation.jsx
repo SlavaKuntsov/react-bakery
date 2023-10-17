@@ -4,7 +4,7 @@ import classNames from 'classnames';
 export default function Links ({ isMenu, isCLoseDrawer }) {
 	return (
 		<>
-			<LinkStyle isMenu={isMenu} to='/home' isCLose={isCLoseDrawer}>Главная</LinkStyle>
+			<LinkStyle isMenu={isMenu} to='/' isCLose={isCLoseDrawer}>Главная</LinkStyle>
 			<LinkStyle isMenu={isMenu} to='/catalog' isCLose={isCLoseDrawer}>Каталог</LinkStyle>
 			<LinkStyle isMenu={isMenu} to='/about' isCLose={isCLoseDrawer}>О нас</LinkStyle>
 		</>
