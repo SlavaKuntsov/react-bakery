@@ -9,6 +9,9 @@ import Layout from 'components/Layout/Layout'
 const Home = lazy(() => import('pages/Home'))
 const Catalog = lazy(() => import('pages/Catalog'))
 const About = lazy(() => import('pages/About'))
+import Error  from 'pages/ErrorPage'
+// const Error = lazy(() => import('pages/Error/404'))
+
 
 export default function App() {
 	const dispatch = useDispatch()
@@ -26,7 +29,7 @@ export default function App() {
 		{
 			path: '/',
 			element: <Layout />,
-			errorElement: <></>,
+			errorElement: <Error />,
 			children: [
 				{
 					path: '/',
