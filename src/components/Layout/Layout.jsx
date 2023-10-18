@@ -35,7 +35,7 @@ export default function Layout() {
 					<Cart/>
 				</Suspense>
 			</header>
-			<main>
+			<main className='w-full h-full flex flex-col items-center overflow-hidden'>
 				<Suspense fallback={<p>loading</p>}>
 					<Outlet />
 				</Suspense>

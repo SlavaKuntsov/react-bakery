@@ -11,7 +11,7 @@ import { cake, cakeMobileBlur, m1, m2, m3 } from 'utils/assetsImports'
 export default function StartBlock() {
 	const allCakes = [m1, m2, m1, m2, m3, m3, m1, m2, m3]
 	return (
-		<div className='relative sm:pb-10 md:p-0 min-h-[1000px] sm:min-h-0'>
+		<section className='startBlock relative sm:pb-10 md:p-0 min-h-[1000px] sm:min-h-0'>
 			<div
 				className='start-block
 				flex flex-col sm:flex-row justify-between 
@@ -24,6 +24,7 @@ export default function StartBlock() {
 						w-full max-w-lg mx-auto sm:min-w-[350px] sm:max-md:h-[300px] md:min-w-[400px] md:max-lg:h-[340px] lg:min-w-[500px] xl:h-[600px] xl:min-w-[700px] 
 						z-10'
 				/>
+
 				<div
 					className='w-full flex flex-col gap-6 sm:gap-8 
 						mt-0 sm:mt-28 md:mt-32 lg:mt-48 
@@ -38,19 +39,18 @@ export default function StartBlock() {
 						Подарим вам счастье, с помощью кусочка торта!
 					</h1>
 					{/*  */}
-					<div className='flex flex-col gap-4 sm:gap-2 relative py-6 px-8 sm:p-0 sm:m-0 text-[#FBEDCD]'>
-						<div className='absolute top-0 left-0 block sm:hidden w-full h-full bg-brown opacity-95 rounded-xl z-0'></div>
-						<h3 className=' sm:text-gray xl:leading-normal text-xl xl:text-2xl z-10 hyphens-auto'>
+					<div className='flex flex-col gap-4 sm:gap-2 py-6 px-8 sm:p-0 sm:m-0 text-center text-white sm:text-gray bg-[#4A1D1FB2] sm:bg-transparent rounded-xl'>
+						<h3 className='xl:leading-normal font-semibold text-xl xl:text-2xl z-10 hyphens-auto'>
 							Поставка замороженной белорусской выпечки.
 						</h3>
-						<h3 className=' sm:text-gray xl:leading-normal text-xl xl:text-2xl z-10 hyphens-auto'>
+						<h3 className='xl:leading-normal text-xl xl:text-2xl z-10 hyphens-auto'>
 							Разумно распорядимся вашими финансами и временем.
 							Ведь наша выпечка будет самой свежей!
 						</h3>
 					</div>
 
-					<div className='w-full flex flex-row justify-between sm:mt-10 md:m-0'>
-						<Button isDark={true} to={'/'}>
+					<div className='w-full flex sm:mt-10 md:m-0'>
+						<Button isDark={true} to={'/'} position={'right'}>
 							Заказать
 						</Button>
 					</div>
@@ -70,6 +70,6 @@ export default function StartBlock() {
 					className='absolute bottom-0 xl:bottom-10 sm:-right-28 -right-32'
 				/>
 			</Suspense>
-		</div>
+		</section>
 	)
 }
