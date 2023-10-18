@@ -94,7 +94,12 @@ export default function Carousel ({ imageArray, className, hiddenOnMobile }) {
 							)
 							: null
 					}}
-				><ArrowL size={'2rem'}/></div>
+				>
+					{size640pxMax 
+						? <ArrowL size={'2rem'} color="white"/>
+						: <ArrowL size={'2rem'}/>
+					}
+				</div>
 				<div className='min-w-[30px] text-center flex flex-row items-start select-none text-white sm:text-black'>
 					<span className='text-2xl font-semibold'>{countOfViewedImages}</span>
 					<span className='text-2xl'>/</span>
@@ -109,7 +114,12 @@ export default function Carousel ({ imageArray, className, hiddenOnMobile }) {
 							)
 							: null
 					}}
-				><ArrowR size={'2rem'}/></div>
+				>
+					{size640pxMax 
+						? <ArrowR size={'2rem'} color="white"/>
+						: <ArrowR size={'2rem'}/>
+					}
+				</div>
 			</div>
 
 			<div 

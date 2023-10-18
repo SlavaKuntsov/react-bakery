@@ -12,9 +12,9 @@ export const Gradient = () => {
 export const GradientMobile = () => {
 	return (
 		<div
-			className='mobile-gradient block sm:hidden
-			w-full h-[700px] 
-			absolute top-0 z-0 
+			className='mobile-gradient block sm:hidden overflow-hidden
+			w-full h-[600px] 
+			absolute top-0 z-0
 			bg-[#ffeab7] blur-[300px]'
 		></div>
 	)

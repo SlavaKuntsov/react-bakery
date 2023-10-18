@@ -28,14 +28,14 @@ export default function Layout() {
 	}, [navigate, location]);
 
 	return (
-		<div className='layout bg-white w-full h-full overflow-x-hidden overflow-y-auto'>
+		<div className='layout bg-white w-full h-full '>
 			<header>
 				<Nav />
 				<Suspense fallback={<></>}>
 					<Cart/>
 				</Suspense>
 			</header>
-			<main className='w-full h-full flex flex-col items-center overflow-hidden'>
+			<main className='w-full h-[3000px] flex flex-col items-center overflow-hidden gap-12 relative'>
 				<Suspense fallback={<p>loading</p>}>
 					<Outlet />
 				</Suspense>
