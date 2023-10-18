@@ -5,9 +5,10 @@ import { Drawer } from 'antd'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import { ShoppingCartOutlined } from '@ant-design/icons'
 
-import Navigation from './Navigation'
+import Navigation from 'components/Nav/Navigation'
 
-import CartAction from '../../store/actions/cart.action'
+import CartAction from 'store/actions/cart.action'
+import Title from "components/Typography/Title";
 
 export default function Nav() {
 	
@@ -25,9 +26,7 @@ export default function Nav() {
 	return (
 		<nav className='sticky top-0 bg-white w-full flex justify-center items-center z-20 border-b-[0.5px] border-[#56B28033]'>
 			<div className="max-w-[1600px] flex flex-row justify-between items-center w-full sm:px-16 md:px-20 py-5 sm:py-4 relative">
-				<h2 className='text-2xl md:text-3xl 2xl:text-4xl font-semibold inline sm:block text-center w-full sm:w-auto text-brown'>
-					Белорусский вкус
-				</h2>
+				<Title>Белорусский вкус</Title>
 
 				<ul className='hidden sm:flex flex-row gap-12 md:gap-16 lg:gap-24 text-xl lg:text-2xl'>
 					<Navigation isMenu={false}/>
@@ -54,7 +53,7 @@ export default function Nav() {
 
 				<Drawer 
 					title={
-						<h2>Навигация</h2>
+						<Title>Навигация:</Title>
 					}
 					placement='right' 
 					onClose={closeDrawer} 
