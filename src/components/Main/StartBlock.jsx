@@ -69,7 +69,7 @@ export default function StartBlock() {
 					<Carousel
 						imageArray={allCakes}
 						className='absolute bottom-0 xl:bottom-10 sm:-right-28 -right-32'
-						hiddenOnMobile={true}
+						laptop={true}
 					/>
 				</Suspense>
 			</section>
@@ -86,8 +86,7 @@ export default function StartBlock() {
 				<Suspense fallback={<div>Loading...</div>}>
 					<Carousel
 						imageArray={allCakes}
-						className=''
-						hiddenOnMobile={false}
+						laptop={false}
 					/>
 				</Suspense>
 			</section>

@@ -1,14 +1,14 @@
+import { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { useState } from 'react'
 
-import { Drawer } from 'antd'
-import { HamburgerIcon } from '@chakra-ui/icons'
-import { ShoppingCartOutlined } from '@ant-design/icons'
+import { ShoppingCartOutlined } from '@ant-design/icons';
+import { HamburgerIcon } from '@chakra-ui/icons';
+import { Drawer } from 'antd';
 
-import Navigation from 'components/Nav/Navigation'
+import Navigation from 'components/Nav/Navigation';
 
-import CartAction from 'store/actions/cart.action'
 import Title from "components/Typography/Title";
+import CartAction from 'store/actions/cart.action';
 
 export default function Nav() {
 	
@@ -25,7 +25,9 @@ export default function Nav() {
 	}
 	return (
 		<nav className='sticky top-0 bg-white w-full flex justify-center items-center z-20 border-b-[0.5px] border-[#56B28033]'>
-			<div className="max-w-[1600px] flex flex-row justify-between items-center w-full sm:px-16 md:px-20 py-5 sm:py-4 relative">
+			<div className="max-w-[1600px] flex flex-row justify-between items-center w-full sm:px-16 md:px-20 py-4 relative">
+				{/* было py-5 sm:py-4 */}
+				
 				<Title>Белорусский вкус</Title>
 
 				<ul className='hidden sm:flex flex-row gap-12 md:gap-16 lg:gap-24 text-xl lg:text-2xl'>
@@ -33,7 +35,7 @@ export default function Nav() {
 				</ul>
 
 				<div 
-					className='relative hidden sm:block lg:ml-[130px] xl:ml-[200px]'
+					className='relative hidden sm:block lg:ml-[130px] xl:ml-[200px] cursor-pointer'
 					onClick={() => dispatch(CartAction.toggleCart())}
 				>
 					<ShoppingCartOutlined 
@@ -46,6 +48,7 @@ export default function Nav() {
 
 				<div className='absolute sm:hidden right-4'>
 					<HamburgerIcon
+						className='cursor-pointer'
 						boxSize={30}
 						onClick={showDrawer}
 					/>
@@ -53,7 +56,7 @@ export default function Nav() {
 
 				<Drawer 
 					title={
-						<Title>Навигация:</Title>
+						<Title isMenuTitle={true}>Навигация:</Title>
 					}
 					placement='right' 
 					onClose={closeDrawer} 

@@ -23,16 +23,14 @@ export default function Cart() {
 				open={isCartOpen}
 
 				title={
-					<h2>
-						<Title>Ваша корзина</Title> ({products.length}):
-					</h2>
+					<Title isMenuTitle={true}>Ваша корзина ({products.length}):</Title> 
 				}
 			>
 				<h2 className='text-2xl font-bold'></h2>
 				
 			</Drawer>
 			<div 
-				className='absolute flex sm:hidden right-4 bottom-4 rounded-full w-14 h-14 bg-blue-400 items-center justify-center z-50'
+				className='absolute flex sm:hidden right-4 bottom-4 rounded-full w-14 h-14 bg-blue-400 items-center justify-center z-50 cursor-pointer'
 				onClick={() => {
 					dispatch(CartAction.toggleCart())
 				}}

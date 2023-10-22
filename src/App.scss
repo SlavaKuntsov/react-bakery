@@ -12,14 +12,15 @@
 	right: 0 !important;
 }
 
-@media (width <= 650px) {
-	.ant-drawer-header-title {
-		h2{
-			font-size: 20px;
-		}
-	}
-}
+// @media (width <= 650px) {
+// 	.ant-drawer-header-title {
+// 		h2{
+// 			font-size: 20px;
+// 		}
+// 	}
+// }
 
 .ant-drawer-header{
-	height: 54px !important;
+	min-height: 51px !important;
+	max-height: 51px !important;
 }

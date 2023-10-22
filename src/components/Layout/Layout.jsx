@@ -1,32 +1,15 @@
-import { Suspense, lazy, useEffect } from 'react'
-
-import PropTypes from 'prop-types'
-import { Outlet, useLocation, useNavigate } from 'react-router-dom'
+import { Suspense, lazy } from 'react'
+import { Outlet } from 'react-router-dom'
 
 import 'src/App.scss'
 
 import Nav from '../Nav/Nav'
+import Loader from 'components/Loader'
 
 const Cart = lazy(() => import('components/Cart/Cart'))
 
 
 export default function Layout() {
-
-	const navigate = useNavigate();
-	const location = useLocation();
-
-	useEffect(() => {
-		// if(location.pathname === '/') {
-		// 	// navigate('/home', { replace: true });
-		// }
-		// else if(location.hash === '/catalog') {
-		// 	navigate('/catalog', { replace: true });
-		// }
-		// else if(location.hash === '/about') {
-		// 	navigate('/about', { replace: true });
-		// }
-	}, [navigate, location]);
-
 	return (
 		<div className='layout bg-white w-full h-full '>
 			<header>
@@ -36,15 +19,11 @@ export default function Layout() {
 				</Suspense>
 			</header>
 			<main className='w-full h-[3000px] flex flex-col items-center overflow-hidden gap-12 relative'>
-				<Suspense fallback={<p>loading</p>}>
+				<Suspense fallback={<Loader />}>
 					<Outlet />
 				</Suspense>
 			</main>
 			<footer></footer>
 		</div>
 	)
-}
-
-Layout.propTypes = {
-	children: PropTypes.element
 }
