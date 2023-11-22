@@ -1,6 +1,6 @@
 import Button from "components/Buttons/Button";
 import AssortmentCard from "components/Cards/AssortmentCard"
-import SectionTitle from "components/Typography/sectionTitle";
+import SectionTitle from "components/Typography/SectionTitle";
 
 import { breadCard, breadCard2 } from "utils/assetsImports"
 
