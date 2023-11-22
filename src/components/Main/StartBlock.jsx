@@ -51,7 +51,7 @@ export default function StartBlock() {
 						</div>
 
 						<div className='w-full flex sm:mt-10 md:m-0'>
-							<Button isDark={true} to={'/'}>
+							<Button to={'/'} className='ml-auto sm:ml-0'>
 								Заказать
 							</Button>
 						</div>
