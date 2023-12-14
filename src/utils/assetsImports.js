@@ -1,13 +1,13 @@
 export { default as cake } from 'assets/cake/pngegg.png'
 
 export { default as m1 } from 'assets/cake/honey cake/1579904333_7-p-torti-medovik-13.jpg'
-export { default as m2 } from 'assets/cake/honey cake/cake1.jpg'
+// export { default as m2 } from 'assets/cake/honey cake/cake1.jpg'
 export { default as m3 } from 'assets/cake/honey cake/288e6160f1f8aa7d06a3a1abe095ff23.jpeg'
 
 export { default as cakeMobileBlur } from 'assets/blur2.png'
 
 export { default as breadCard} from 'assets/bread/card.jpeg'
-export { default as breadCard2} from 'assets/bread/bread-pastries-baker-baked-crispy-fresh (Среднее).png'
+// export { default as breadCard2} from 'assets/bread/bread-pastries-baker-baked-crispy-fresh (Среднее).png'
 
 export { default as cakeCard} from 'assets/cake/ифсл.jpg'
 
