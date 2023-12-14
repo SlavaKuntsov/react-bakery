@@ -24,3 +24,9 @@
 	min-height: 51px !important;
 	max-height: 51px !important;
 }
+
+.ant-breadcrumb {
+	span.ant-breadcrumb-link {
+		font-weight: 400;
+	}
+}

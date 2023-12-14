@@ -1,5 +1,5 @@
 const initialState = {
-	products: [{id: 1}],
+	products: [],
 	isCartOpen: false,
 }
 
@@ -12,6 +12,19 @@ export const cartReducer = (state = initialState, { type, payload }) => {
 						? state.products.filter(p => p.id !== payload.id)
 						: [...state.products, payload]
 		}
+		case 'CHANGE_ITEM_COUNT':
+			return {
+				...state,
+				products: state.products.some(p => p.id === payload.id)
+					? state.products.map(p => {
+							if (p.id === payload.id) {
+								return { ...p, count: payload.count }
+							}
+							return p
+					})
+					: state.products
+			}
+		
 		case 'TOGGLE_CART':
 			return {
 				...state,

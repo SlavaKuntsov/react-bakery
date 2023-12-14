@@ -17,7 +17,7 @@ export default function Carousel ({ imageArray, className, laptop }) {
 	const IMAGE_ARRAY = imageArray
 
 	const [MAX_IMAGE_ON_ONE_SLIDE, setMaxImageOnOneSlide] = useState(3) // !
-	console.log('MAX_IMAGE_ON_ONE_SLIDE: ', MAX_IMAGE_ON_ONE_SLIDE);
+	// console.log('MAX_IMAGE_ON_ONE_SLIDE: ', MAX_IMAGE_ON_ONE_SLIDE);
 	const imgWidth = 200;
 	const [IMG_WIDTH, set_IMG_WIDTH] = useState(imgWidth)
 
@@ -71,7 +71,7 @@ export default function Carousel ({ imageArray, className, laptop }) {
 	const COUNT_OF_IMAGES_ON_THE_CAROUSEL = IMAGE_ARRAY.length
 
 	const [countOfViewedImages, setCountOfViewedImages] = useState(MAX_IMAGE_ON_ONE_SLIDE)
-	console.log('countOfViewedImages: ', countOfViewedImages);
+	// console.log('countOfViewedImages: ', countOfViewedImages);
 	
 	const ONE_SLIDE_WIDTH = MAX_IMAGE_ON_ONE_SLIDE * IMG_WIDTH; 
 

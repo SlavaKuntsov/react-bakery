@@ -6,13 +6,9 @@ export default function Button ({ isDark = 'true', to = '/', position, className
 	
 	return (
 		<Link
-		onClick={() => {
-			setTimeout(() => {
-				window.scrollTo(0, 0);
-				console.log('top');
-			}, 0);
-			console.log('top')
-		}
+			onClick={e => {
+				e.target.scrollTo(0, 0);
+			}
 		}
 			to={to}
 			className={

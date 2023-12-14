@@ -1,4 +1,4 @@
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import classNames from 'classnames';
 
 export default function Links ({ isMenu, isCLoseDrawer }) {
@@ -28,7 +28,7 @@ function LinkStyle({ children, isMenu, to, isCLose }) {
 						{'text-2xl px-6 py-4': isMenu},
 						{'text-lg md:text-xl 2xl:text-2xl': !isMenu},
 						{'': isMenu && location.pathname === to},
-						{'font-semibold': location.pathname === to},
+						{'font-semibold': location.pathname === to || (to.includes('/catalog') && location.pathname.includes('/catalog'))},
 						{'tracking-tight': !isMenu && to === '/about'},
 						{'tracking-wide': !isMenu && location.pathname !== to},
 					)

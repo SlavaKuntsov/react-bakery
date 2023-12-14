@@ -4,7 +4,7 @@ import LazyImage from "components/LazyImage";
 export default function AdvantageCard ({ icon, title, text}) {
 	
 	return (
-		<div className="advantageCard flex flex-col justify-center items-center gap-10 basis-1/3 grow-0 shrink-0 max-w-[300px] text-center">
+		<div className="advantageCard flex flex-col justify-center items-center gap-10 basis-1/3 grow-0 shrink-0 max-w-[300px] min-w-[200px] text-center">
 			<LazyImage 
 				src={icon}
 				className='w-28'

@@ -1,5 +1,7 @@
 const initialState = {
-	allProducts: []
+	bread: [],
+	cake: [],
+	dough: [],
 }
 
 export const productReducer = (state = initialState, { type, payload }) => {
@@ -8,10 +10,20 @@ export const productReducer = (state = initialState, { type, payload }) => {
 			return {
 				...state
 		}
-		case 'FETCH_DATA_SUCCESS':
+		case 'FETCH_BREAD_SUCCESS':
 			return {
 				...state,
-				allProducts: payload
+				bread: payload
+			}
+		case 'FETCH_CAKE_SUCCESS':
+			return {
+				...state,
+				cake: payload
+			}
+		case 'FETCH_DOUGHT_SUCCESS':
+			return {
+				...state,
+				dough: payload
 			}
 		case 'FETCH_DATA_ERROR':
 			return {

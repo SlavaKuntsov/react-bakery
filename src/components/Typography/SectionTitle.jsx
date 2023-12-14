@@ -1,6 +1,5 @@
 import classNames from "classnames";
 
-
 export default function SectionTitle ({ children }) {
 	return (
 		<h2 className={

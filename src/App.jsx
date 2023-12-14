@@ -1,8 +1,5 @@
-import { lazy, useEffect } from 'react'
-import { useDispatch } from 'react-redux'
+import { lazy } from 'react'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-
-import productAction from 'store/actions/products.action'
 
 import Layout from 'components/Layout/Layout'
 import Error from 'pages/ErrorPage'
@@ -10,10 +7,10 @@ import Error from 'pages/ErrorPage'
 const Home = lazy(() => import('pages/Home'))
 const Catalog = lazy(() => import('pages/Catalog'))
 const About = lazy(() => import('pages/About'))
-// const Error = lazy(() => import('pages/Error/404'))
+const ItemPage = lazy(() => import('pages/ItemPage'))
+const CategoryPage = lazy(() => import('pages/CategoryPage'))
 
 export default function App() {
-	const dispatch = useDispatch()
 
 	const router = createBrowserRouter([
 		{
@@ -23,12 +20,19 @@ export default function App() {
 			children: [
 				{
 					path: '/',
-					index: true,
 					element: <Home />
 				},
 				{
 					path: '/catalog',
 					element: <Catalog />
+				},
+				{
+					path: '/catalog/:category',
+					element: <CategoryPage />
+				},
+				{
+					path: '/catalog/:category/:itemId',
+					element: <ItemPage />
 				},
 				{
 					path: '/about',
@@ -38,9 +42,6 @@ export default function App() {
 		}
 	])
 
-	useEffect(() => {
-		dispatch(productAction.fetchData())
-	}, [])
 
 	return <RouterProvider router={router} />
 }

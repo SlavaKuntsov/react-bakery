@@ -5,14 +5,14 @@ const Carousel = lazy(() => import('components/Carousel/Carousel'))
 import Button from 'components/Buttons/Button'
 import LazyImage from 'components/LazyImage'
 
-import { cake, cakeMobileBlur, m1, m2, m3 } from 'utils/assetsImports'
+import { cake, cakeMobileBlur, m1, cakeCard, m3, c1, c2, c3 } from 'utils/assetsImports'
 
 
 export default function StartBlock() {
-	const allCakes = [m1, m2, m1, m2, m3, m3, m1, m2, m3]
+	const allCakes = [c1, c2, c3, cakeCard, m1, m3, c1, c2, c3]
 	return (
 		<>
-			<section className='start-block relative sm:pb-10 md:p-0'>
+			<section className='start-block relative sm:pb-10 md:p-0 z-10'>
 				<div
 					className='start-image
 					flex flex-col sm:flex-row justify-between 

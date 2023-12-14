@@ -13,20 +13,20 @@ import {
 import storage from 'redux-persist/lib/storage'
 import thunk from 'redux-thunk'
 
-import { cartReducer } from './reducers/cart.reducer'
-import { productReducer } from './reducers/product.reducer'
+import { cartReducer } from 'store/reducers/cart.reducer'
+import { itemReducer } from 'store/reducers/item.reducer'
+import { productReducer } from 'store/reducers/product.reducer'
 
 const persistConfig = {
 	key: 'root',
 	version: 1,
-	storage,
-	whitelist: ['products'],
-	blacklist: ['isCartOpen', 'allProducts']
+	storage
 }
 
 const rootReducer = combineReducers({
 	cart: cartReducer,
-	products: productReducer
+	products: productReducer,
+	item: itemReducer
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
