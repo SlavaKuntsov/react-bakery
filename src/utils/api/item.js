@@ -1,5 +1,5 @@
 import axios from "axios"
 
 export default {
-	getItemById: async id => await axios.get(`http://localhost:9999/item?id=${id}`)
+	getItemById: async id => await axios.get(`https://bakery-backend-9dyd.onrender.com/item?id=${id}`)
 } 
